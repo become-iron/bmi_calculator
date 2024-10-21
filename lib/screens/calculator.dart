@@ -1,4 +1,5 @@
 import 'package:bmi_calculator/enums/common.dart' show Gender;
+import 'package:bmi_calculator/screens/results.dart';
 import 'package:bmi_calculator/widgets/gender_button.dart' show GenderButton;
 import 'package:bmi_calculator/widgets/height_input.dart' show HeightInput;
 import 'package:bmi_calculator/widgets/number_input.dart';
@@ -29,16 +30,15 @@ class _CalculatorState extends State<Calculator> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: theme.colorScheme.surface,
-        title: Center(
-          child: Text(
-            'BMI Calculator',
-            style: TextStyle(
-              fontWeight: FontWeight.w800,
-              color: theme.colorScheme.onPrimary,
-            ),
+        // backgroundColor: theme.colorScheme.surface,
+        title: Text(
+          'BMI Calculator',
+          style: TextStyle(
+            fontWeight: FontWeight.w800,
+            color: theme.colorScheme.onPrimary,
           ),
         ),
+        centerTitle: true,
       ),
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -100,7 +100,6 @@ class _CalculatorState extends State<Calculator> {
                             });
                           },
                         )),
-                        // Expanded(child: Placeholder()),
                         SizedBox(width: 24),
                         Expanded(
                             child: NumberInput(
@@ -128,7 +127,19 @@ class _CalculatorState extends State<Calculator> {
               ),
               backgroundColor: Color(0xFFEB1655),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Results(
+                    gender: gender,
+                    height: height,
+                    weight: weight,
+                    age: age,
+                  ),
+                ),
+              );
+            },
             child: Padding(
               padding: EdgeInsets.only(top: 12, bottom: 12),
               child: Text(
