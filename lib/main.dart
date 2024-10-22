@@ -15,6 +15,7 @@ class BmiCalculator extends StatelessWidget {
     // debugPaintSizeEnabled = true;
     return MaterialApp(
       title: 'BMI Calculator',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color(0xFF0A0E21),

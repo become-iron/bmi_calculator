@@ -1,6 +1,12 @@
 # bmi_calculator
 
-BMI Calculator.
+Simple BMI calculator created by [the design](docs/design.webp)
+found [on the Internet](https://reliasoftware.com/blog/flutter-project-ideas).
+
+## Screenshots
+
+![Calculator Screens](docs/screenshots/calculator_screen.png)
+![Results Screen](docs/screenshots/results_screen.png)
 
 ## Development
 
