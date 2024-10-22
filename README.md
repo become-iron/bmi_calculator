@@ -5,8 +5,10 @@ found [on the Internet](https://reliasoftware.com/blog/flutter-project-ideas).
 
 ## Screenshots
 
-![Calculator Screens](docs/screenshots/calculator_screen.png)
-![Results Screen](docs/screenshots/results_screen.png)
+<div>
+  <img src="docs/screenshots/calculator_screen.png" alt="Calculator Screens" width="300" />
+  <img src="docs/screenshots/results_screen.png" alt="Results Screen" width="300" /> 
+</div>
 
 ## Development
 
