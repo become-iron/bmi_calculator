@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/constants/bmi.dart';
 import 'package:bmi_calculator/enums/common.dart' show Gender;
 import 'package:bmi_calculator/screens/results.dart';
 import 'package:bmi_calculator/widgets/gender_button.dart' show GenderButton;
@@ -91,8 +92,8 @@ class _CalculatorState extends State<Calculator> {
                         Expanded(
                             child: NumberInput(
                           label: 'Weight',
-                          min: 1,
-                          max: 500,
+                          min: minWeight,
+                          max: maxWeight,
                           value: weight,
                           onChanged: (value) {
                             setState(() {
@@ -104,8 +105,8 @@ class _CalculatorState extends State<Calculator> {
                         Expanded(
                             child: NumberInput(
                           label: 'Age',
-                          min: 1,
-                          max: 120,
+                          min: minAge,
+                          max: maxAge,
                           value: age,
                           onChanged: (value) {
                             setState(() {
