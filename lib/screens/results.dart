@@ -35,7 +35,7 @@ class Results extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        leading: BackButton(color: Colors.white),
+        leading: const BackButton(color: Colors.white),
         title: Text(
           'BMI Calculator',
           style: TextStyle(
@@ -46,17 +46,17 @@ class Results extends StatelessWidget {
         centerTitle: true,
       ),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(12, 12, 12, 24),
+        padding: const EdgeInsets.fromLTRB(12, 12, 12, 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Center(
+            const Center(
               child: Text(
                 'Your Result',
                 style: TextStyle(fontSize: 48, fontWeight: FontWeight.w600),
               ),
             ),
-            SizedBox(height: 12),
+            const SizedBox(height: 12),
             Expanded(
                 child: Card(
               color: cardBackgroundColor,
@@ -67,7 +67,7 @@ class Results extends StatelessWidget {
                   children: [
                     Text(
                       status.name.toUpperCase(),
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 32,
                         color: Colors.green,
                         fontWeight: FontWeight.w600,
@@ -75,14 +75,14 @@ class Results extends StatelessWidget {
                     ),
                     Text(
                       index.toStringAsFixed(1),
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 96,
                         fontWeight: FontWeight.w800,
                       ),
                     ),
                     Text(
                       bmiStatusesToDescriptions[status]!,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 24,
                       ),
                       textAlign: TextAlign.center,

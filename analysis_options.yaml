@@ -21,7 +21,26 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
-     prefer_single_quotes: true
+     - avoid_print
+     - prefer_single_quotes
+     - await_only_futures
+     - cancel_subscriptions
+     - close_sinks
+     - prefer_const_declarations
+     - prefer_const_constructors
+     - prefer_const_constructors_in_immutables
+     - prefer_const_literals_to_create_immutables
+     - prefer_final_locals
+     - prefer_final_fields
+     # - avoid_redundant_argument_values
+     - avoid_init_to_null
+     - unnecessary_breaks
+     - use_key_in_widget_constructors
+     - avoid_unnecessary_containers
+     - prefer_typing_uninitialized_variables
+     - avoid_renaming_method_parameters
+     - sized_box_for_whitespace
+     - avoid_positional_boolean_parameters
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

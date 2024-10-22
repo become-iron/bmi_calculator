@@ -14,11 +14,11 @@ class HeightInput extends StatelessWidget {
     return Card(
       color: cardBackgroundColor,
       child: Padding(
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.all(12),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text(
+            const Text(
               'Height',
               style: labelStyle,
             ),
@@ -27,12 +27,12 @@ class HeightInput extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text('$height', style: valueLabelStyle),
-                Text(' cm', style: TextStyle(fontSize: 24, color: Colors.grey)),
+                const Text(' cm', style: TextStyle(fontSize: 24, color: Colors.grey)),
               ],
             ),
             Slider(
               activeColor: Colors.pinkAccent,
-              inactiveColor: Color(0xFF90939B),
+              inactiveColor: const Color(0xFF90939B),
               min: minHeight.toDouble(),
               max: maxHeight.toDouble(),
               onChanged: (value) => onChanged(value.toInt()),

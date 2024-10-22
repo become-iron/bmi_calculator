@@ -10,8 +10,8 @@ class GenderSettings {
 }
 
 Map<Gender, GenderSettings> genderSettings = {
-  Gender.male: GenderSettings('Male', Icons.male_rounded),
-  Gender.female: GenderSettings('Female', Icons.female_rounded),
+  Gender.male: const GenderSettings('Male', Icons.male_rounded),
+  Gender.female: const GenderSettings('Female', Icons.female_rounded),
 };
 
 class GenderButton extends StatelessWidget {

@@ -47,7 +47,7 @@ class _CalculatorState extends State<Calculator> {
         children: [
           Expanded(
             child: Padding(
-              padding: EdgeInsets.fromLTRB(12, 12, 12, 24),
+              padding: const EdgeInsets.fromLTRB(12, 12, 12, 24),
               child: Column(
                 // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -62,7 +62,7 @@ class _CalculatorState extends State<Calculator> {
                             onPressed: () => _setGender(Gender.male),
                           ),
                         ),
-                        SizedBox(width: 24),
+                        const SizedBox(width: 24),
                         Expanded(
                           child: GenderButton(
                             gender: Gender.female,
@@ -73,7 +73,7 @@ class _CalculatorState extends State<Calculator> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 24),
+                  const SizedBox(height: 24),
                   Expanded(
                     child: HeightInput(
                       height: height,
@@ -84,7 +84,7 @@ class _CalculatorState extends State<Calculator> {
                       },
                     ),
                   ),
-                  SizedBox(height: 24),
+                  const SizedBox(height: 24),
                   Expanded(
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -101,7 +101,7 @@ class _CalculatorState extends State<Calculator> {
                             });
                           },
                         )),
-                        SizedBox(width: 24),
+                        const SizedBox(width: 24),
                         Expanded(
                             child: NumberInput(
                           label: 'Age',
@@ -123,10 +123,10 @@ class _CalculatorState extends State<Calculator> {
           ),
           FilledButton(
             style: ElevatedButton.styleFrom(
-              shape: RoundedRectangleBorder(
+              shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.zero),
               ),
-              backgroundColor: Color(0xFFEB1655),
+              backgroundColor: const Color(0xFFEB1655),
             ),
             onPressed: () {
               Navigator.push(
@@ -141,7 +141,7 @@ class _CalculatorState extends State<Calculator> {
                 ),
               );
             },
-            child: Padding(
+            child: const Padding(
               padding: EdgeInsets.only(top: 12, bottom: 12),
               child: Text(
                 'Calculate',

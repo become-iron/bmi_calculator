@@ -32,8 +32,8 @@ class BmiCalculator extends StatelessWidget {
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Color(0xFF0A0E21),
-          surface: Color(0xFF0A0E21),
+          seedColor: const Color(0xFF0A0E21),
+          surface: const Color(0xFF0A0E21),
           // surfaceTint: Color(0x1D1F33FF),
           // onPrimary: Colors.white,
           // onSecondary: Colors.white,

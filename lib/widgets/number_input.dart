@@ -5,7 +5,7 @@ import 'package:bmi_calculator/constants/theme.dart'
 import 'package:flutter/material.dart';
 
 final iconStyle = IconButton.styleFrom(
-  backgroundColor: Color(0xFF4E5062),
+  backgroundColor: const Color(0xFF4E5062),
 );
 
 class NumberInput extends StatefulWidget {
@@ -32,7 +32,7 @@ class NumberInput extends StatefulWidget {
 class _NumberInputState extends State<NumberInput> {
   Timer? _timer;
 
-  void updateValue(bool increment) {
+  void updateValue({required bool increment}) {
     final delta = increment ? 1 : -1;
     final newValue = (widget.value + delta).clamp(widget.min, widget.max);
     if (newValue != widget.value) {
@@ -40,9 +40,9 @@ class _NumberInputState extends State<NumberInput> {
     }
   }
 
-  void _handleLongPressStart(bool increment) {
-    _timer = Timer.periodic(Duration(milliseconds: 100), (timer) {
-      updateValue(increment);
+  void _handleLongPressStart({required bool increment}) {
+    _timer = Timer.periodic(const Duration(milliseconds: 100), (timer) {
+      updateValue(increment: increment);
     });
   }
 
@@ -57,7 +57,7 @@ class _NumberInputState extends State<NumberInput> {
     return Card(
       color: cardBackgroundColor,
       child: Padding(
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.all(12),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -67,30 +67,30 @@ class _NumberInputState extends State<NumberInput> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 GestureDetector(
-                  onTapDown: (_) => _handleLongPressStart(false),
+                  onTapDown: (_) => _handleLongPressStart(increment: false),
                   onTapUp: (_) => _handleLongPressStop(),
                   onTapCancel: _handleLongPressStop,
                   child: IconButton(
                     style: iconStyle,
                     onPressed: () {
-                      updateValue(false);
+                      updateValue(increment: false);
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.remove,
                       color: Colors.white,
                     ),
                   ),
                 ),
                 GestureDetector(
-                  onTapDown: (_) => _handleLongPressStart(true),
+                  onTapDown: (_) => _handleLongPressStart(increment: true),
                   onTapUp: (_) => _handleLongPressStop(),
                   onTapCancel: _handleLongPressStop,
                   child: IconButton(
                     style: iconStyle,
                     onPressed: () {
-                      updateValue(true);
+                      updateValue(increment: true);
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.add,
                       color: Colors.white,
                     ),
