@@ -39,11 +39,7 @@ class GenderButton extends StatelessWidget {
         ),
         backgroundColor:
             active ? cardBackgroundColor : cardBackgroundColorInactive,
-        // textStyle: TextStyle(
-        //   color: Colors.white,
-        // ),
       ),
-      // color: active ? Colors.red : Colors.redAccent,
       child: Padding(
         padding: const EdgeInsets.only(top: 12, bottom: 12),
         child: Column(

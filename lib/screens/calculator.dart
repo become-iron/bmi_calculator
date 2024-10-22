@@ -31,7 +31,6 @@ class _CalculatorState extends State<Calculator> {
 
     return Scaffold(
       appBar: AppBar(
-        // backgroundColor: theme.colorScheme.surface,
         title: Text(
           'BMI Calculator',
           style: TextStyle(
@@ -42,14 +41,12 @@ class _CalculatorState extends State<Calculator> {
         centerTitle: true,
       ),
       body: Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Padding(
               padding: const EdgeInsets.fromLTRB(12, 12, 12, 24),
               child: Column(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Expanded(
