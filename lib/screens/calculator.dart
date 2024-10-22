@@ -14,10 +14,10 @@ class Calculator extends StatefulWidget {
 }
 
 class _CalculatorState extends State<Calculator> {
-  Gender gender = Gender.male;
-  int height = 160;
-  int weight = 55;
-  int age = 20;
+  Gender gender = defaultGender;
+  int height = defaultHeight;
+  int weight = defaultWeight;
+  int age = defaultAge;
 
   void _setGender(Gender value) {
     setState(() {
