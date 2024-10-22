@@ -1,30 +1,48 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
+import 'package:bmi_calculator/constants/bmi.dart';
+import 'package:bmi_calculator/widgets/height_input.dart';
+import 'package:bmi_calculator/widgets/number_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:bmi_calculator/main.dart';
-
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('HeightInput test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const BmiCalculator());
+    await tester.pumpWidget(Directionality(
+      textDirection: TextDirection.ltr,
+      child: HeightInput(
+        height: defaultHeight,
+        onChanged: (_) {},
+      ),
+    ));
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    expect(find.text('$defaultHeight'), findsOneWidget);
+  });
 
-    // Tap the '+' icon and trigger a frame.
+  testWidgets('NumberInput test', (WidgetTester tester) async {
+    const int initialValue = 10;
+    int value = initialValue;
+
+    await tester.pumpWidget(Directionality(
+      textDirection: TextDirection.ltr,
+      child: NumberInput(
+        min: 10,
+        max: 30,
+        label: 'Test',
+        value: value,
+        onChanged: (value_) {
+          value = value_;
+        },
+      ),
+    ));
+
+    expect(find.text('Test'), findsOneWidget);
+
+    expect(find.text('$value'), findsOneWidget);
+
     await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    await tester.pumpAndSettle();
+    const newValue = initialValue + 1;
+    expect(value, newValue);
+    // expect(find.text('$newValue'), findsOneWidget);
   });
 }
